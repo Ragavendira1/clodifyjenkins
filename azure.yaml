@@ -100,7 +100,7 @@ node_templates:
         source:
           #location: https://github.com/Ragavendira1/tf-ansible-source/archive/refs/heads/master.zip
           location: https://github.com/cloudify-community/tf-ansible-source/archive/refs/heads/master.zip
-        source_path: azure/modules/shared_resources
+        source_path: azure/shared_resources
         variables:
           region: { get_input: azure_region_name }
           prefix: { get_input: prefix }
@@ -121,7 +121,7 @@ node_templates:
         source:
           location: https://github.com/cloudify-community/tf-ansible-source/archive/refs/heads/master.zip
           #location: https://github.com/Ragavendira1/tf-ansible-source/archive/refs/heads/master.zip
-        source_path: azure/modules/vm
+        source_path: azure/vm
         variables:
           resource_group_name: { get_attribute: [shared_resources, outputs, resource_group_name, value] }
           location: { get_attribute: [shared_resources, outputs, location, value] }
