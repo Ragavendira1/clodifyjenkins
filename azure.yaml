@@ -119,8 +119,8 @@ node_templates:
     properties:
       resource_config:
         source:
-          #location: https://github.com/cloudify-community/tf-ansible-source/archive/refs/heads/master.zip
-          location: https://github.com/Ragavendira1/tf-ansible-source/archive/refs/heads/master.zip
+          location: https://github.com/cloudify-community/tf-ansible-source/archive/refs/heads/master.zip
+          #location: https://github.com/Ragavendira1/tf-ansible-source/archive/refs/heads/master.zip
         source_path: azure/modules/vm
         variables:
           resource_group_name: { get_attribute: [shared_resources, outputs, resource_group_name, value] }
