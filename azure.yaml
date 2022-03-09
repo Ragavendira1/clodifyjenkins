@@ -56,7 +56,7 @@ inputs:
 
   instance_type:
     type: string
-    description: Azure instance type to deploy (e.g., Standard_B1s)
+    description: Azure instance type to deploy (e.g., Standard_B2ms)
     default: Standard_B2ms
 
   network_cidr:
@@ -99,7 +99,7 @@ node_templates:
       resource_config:
         source:
           location: https://github.com/Ragavendira1/jenkins/archive/refs/heads/master.zip
-        source_path: azure/modules/shared_resource
+        source_path: azure/modules/shared_resources
         variables:
           region: { get_input: azure_region_name }
           prefix: { get_input: prefix }
@@ -150,7 +150,7 @@ node_templates:
           cloudify.interfaces.relationship_lifecycle:
             establish:
               inputs:
-                playbook_path: playbooks/install_jenkins
+                playbook_path: playbooks/install_jenkins.yml
                 sources:
                   instances:
                     hosts:
