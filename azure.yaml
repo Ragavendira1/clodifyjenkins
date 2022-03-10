@@ -160,7 +160,7 @@ node_templates:
                     hosts:
                       instance:
                         ansible_host: { get_attribute: [ TARGET, outputs, ip, value ] }
-                        ansible_user: centos
+                        ansible_user: ubuntu
                         ansible_ssh_private_key_file: { get_secret: private_key_content }
                         ansible_become: true
                         ansible_ssh_common_args: -o StrictHostKeyChecking=no
